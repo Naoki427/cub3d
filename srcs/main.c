@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:42:14 by rkawahar          #+#    #+#             */
-/*   Updated: 2024/11/18 15:52:53 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/18 16:28:38 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ int	main(int ac, char **av)
 		printf("File error: %s: cannot open the file\n", av[1]);
 		exit(1);
 	}
-	
+	analysis_file(fd);
 }

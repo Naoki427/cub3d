@@ -1,53 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r_utils.c                                          :+:      :+:    :+:   */
+/*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:38:26 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 18:26:49 by kawaharadar      ###   ########.fr       */
+/*   Created: 2024/11/18 17:01:50 by kawaharadar       #+#    #+#             */
+/*   Updated: 2024/11/18 17:15:02 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub_3d.h"
 
-size_t	ft_strlen(char *str)
+t_info	init_info(void)
 {
-	int	ans;
+	t_info	ans;
+	int		i;
 
-	ans = 0;
-	while (str[ans])
-		ans++;
+	ans.north = NULL;
+	ans.south = NULL;
+	ans.east = NULL;
+	ans.west = NULL;
+	ans.map = NULL;
+	i = 0;
+	while (i < 3)
+	{
+		ans.ceiling[i] = -1;
+		ans.flooring[i++] = -1;
+	}
 	return (ans);
 }
 
-int	ft_isspace(char c)
+int	check_info(t_info info)
 {
-	if (c == '\t' || c == '\v' || c == '\f')
-		return (1);
-	if (c == '\r' || c == ' ')
-		return (1);
-	return (0);
-}
+	int	ans;
+	int	i;
 
-char	*ft_strcpy(char *str)
-{
-	char	*ans;
-	size_t	i;
-
-	ans = (char *)malloc(ft_strlen(str) + 1);
-	if (ans == NULL)
-	{
-		printf("malloc error\n");
-		exit(1);
-	}
+	ans = 0;
+	if (!info.north || !info.south)
+		ans = 1;
+	if (!info.east || !info.west)
+		ans = 1;
 	i = 0;
-	while (str[i])
+	while (i < 3)
 	{
-		ans[i] = str[i];
+		if (info.ceiling[i] == -1 || info.flooring[i] == -1)
+			ans = 1;
 		i++;
 	}
-	ans[i] = '\0';
+	if (!info.map)
+		ans = 1;
 	return (ans);
 }
