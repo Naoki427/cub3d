@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 # CFLAGS += -g -fsanitize=address
 SRC_DIR = ./srcs
 INCLUDE_DIR = ./include
-SRC = 	$(SRC_DIR)/main.c \
+SRC = 	$(SRC_DIR)/*.c \
 
 MLXDIR = ./minilibx-linux
 MLX = $(MLXDIR)/libmlx_Linux.a
