@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 18:19:09 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/18 20:16:53 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,15 @@ char	*cub3d_gnl(int fd)
 
 	str = (char *)malloc(1);
 	if (str == NULL)
-	{
-		printf("malloc error\n");
-		exit(1);
-	}
+		printf_exit("malloc error");
 	str[0] = '\0';
 	while (1)
 	{
-		i = read(fd, tmp, 1);
+		i = read(fd, &tmp, 1);
 		if (i == 0)
 			break;
+		else if (i < 0)
+			printf_exit("read error");
 		str = re_create(str, tmp);
 		if (tmp == '\n')
 			break;

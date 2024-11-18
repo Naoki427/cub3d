@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:38:26 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 18:26:49 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/18 20:15:48 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ char	*ft_strcpy(char *str)
 	}
 	ans[i] = '\0';
 	return (ans);
+}
+
+void	printf_exit(char *str)
+{
+	printf("%s\n", str);
+	exit(1);
 }
