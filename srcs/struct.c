@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:01:50 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 19:44:37 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/18 20:48:44 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ t_info	init_info(void)
 	ans.west = NULL;
 	ans.map = NULL;
 	i = 0;
+	ans.ceiling = (int *)malloc(sizeof(int) * 3);
+	ans.flooring = (int *)malloc(sizeof(int) * 3);
+	if (!ans.ceiling || !ans.flooring)
+		printf_exit("malloc error");
 	while (i < 3)
 	{
 		ans.ceiling[i] = -1;

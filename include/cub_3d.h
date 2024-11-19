@@ -5,7 +5,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "mlx.h"
+// # include "mlx.h"
 
 # include "rkawahar.h"
 # include "nyoshimi.h"

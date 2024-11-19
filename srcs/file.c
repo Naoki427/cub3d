@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 20:16:53 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/18 20:51:36 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,13 +104,14 @@ int	insert_info(t_info *info, char *str)
 		info->east = select_path(&str[i + 2]);
 	else if (str[i] && (str[i] == '1' || str[i] == '0'))
 		return (1);
+	else if (str[i] && str[i] == 'C')
+		ft_insertion(&str[i + 1], info->ceiling);
+	else if (str[i] && str[i] == 'F')
+		ft_insertion(&str[i + 1], info->flooring);
 	else if (str[i] && str[i] == '\n')
 		return (0);
 	else
-	{
-		printf("Format error: file format error. Read subjectPDF.\n");
-		exit(1);
-	}
+		printf_exit("Format error: file format error. Read subjectPDF.");
 	return (0);
 }
 
