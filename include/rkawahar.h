@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:43:14 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 20:52:01 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/19 17:06:25 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int		ft_isspace(char c);
 char	*ft_strcpy(char *str);
 void	printf_exit(char *str);
 char	**insert_map(char *str, int fd);
-int		*ft_insertion(char *str, int *nums);
+void	ft_insertion(char *str, int *nums);
+void	ft_free(char **str);
+
+void	check_struct(t_info info);
 
 #endif

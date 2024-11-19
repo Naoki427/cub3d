@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 20:51:36 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/19 17:10:02 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	insert_info(t_info *info, char *str)
 		i++;
 	if (str[i] && str[i] == 'N' && str[i + 1] && str[i + 1] == 'O')
 		info->north = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'S' && str[i + 1] && str[i + 1] == 'O')
+	else if (str[i] && str[i] == 'S' && str[i + 1] && str[i + 1] == 'A')
 		info->south = select_path(&str[i + 2]);
 	else if (str[i] && str[i] == 'W' && str[i + 1] && str[i + 1] == 'E')
 		info->west = select_path(&str[i + 2]);
@@ -138,4 +138,5 @@ void	analysis_file(int fd)
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
+	check_struct(info);
 }

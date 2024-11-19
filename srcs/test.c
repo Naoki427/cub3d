@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:32:25 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 14:18:05 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/19 17:06:13 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*re_create_test(char *str, char tmp)
 	char	*ans;
 	size_t	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	ans = (char *)malloc(i + 2);
@@ -59,6 +60,7 @@ char	**add_str(char **str, char *s)
 	int		i;
 	char	**ans;
 
+	i = 0;
 	while (str[i])
 		i++;
 	ans = (char **)malloc(sizeof(char *) * (i + 2));
@@ -91,4 +93,21 @@ char	**test(char *file)
 		free(tmp);
 	}
 	return (ans);
+}
+
+void	check_struct(t_info info)
+{
+	int	i;
+
+	printf("north = %s\n", info.north);
+	printf("south = %s\n", info.south);
+	printf("east = %s\n", info.east);
+	printf("west = %s\n", info.west);
+	printf("flooring = [%d, %d, %d]\n", info.flooring[0], info.flooring[1], info.flooring[2]);
+	printf("ceiling = [%d, %d, %d]\n", info.ceiling[0], info.ceiling[1], info.ceiling[2]);
+	i = 0;
+	while (info.map[i])
+	{
+		printf("%s", info.map[i++]);
+	}
 }
