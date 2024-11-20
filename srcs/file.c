@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 17:10:02 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/20 15:51:42 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ char	*select_path(char *str)
 	while (l != i)
 		ans[j++] = str[l++];
 	ans[j] = '\0';
+	if (ft_strlen(ans) == 0)
+		printf_exit("Infomation lack: write the xpm file path.");
 	return (ans);
 }
 
@@ -94,13 +96,13 @@ int	insert_info(t_info *info, char *str)
 	i = 0;
 	while (ft_isspace(str[i]))
 		i++;
-	if (str[i] && str[i] == 'N' && str[i + 1] && str[i + 1] == 'O')
+	if (str[i] && str[i] == 'N' && info->north == NULL && str[i + 1] == 'O')
 		info->north = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'S' && str[i + 1] && str[i + 1] == 'A')
+	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'A')
 		info->south = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'W' && str[i + 1] && str[i + 1] == 'E')
+	else if (str[i] && str[i] == 'W' && info->west == NULL && str[i + 1] == 'E')
 		info->west = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'E' && str[i + 1] && str[i + 1] == 'A')
+	else if (str[i] && str[i] == 'E' && info->east == NULL && str[i + 1] == 'A')
 		info->east = select_path(&str[i + 2]);
 	else if (str[i] && (str[i] == '1' || str[i] == '0'))
 		return (1);

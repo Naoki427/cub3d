@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:50:09 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 17:20:29 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/20 15:44:32 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ int	ft_atoi(char *str, int *i, char end)
 	int	ans;
 
 	ans = 0;
+	if (str[*i] == end)
+		return (-1);
 	while (str[*i] != end)
 	{
 		if (str[*i] < '0' || '9' < str[*i])
 		{
-			printf("str = [%s], str[i] = [%c]\n", str, str[*i]);
 			printf_exit("Number error: number format error");
 		}
 		ans = ans * 10 + (str[*i] - '0');
