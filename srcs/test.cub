@@ -1,7 +1,7 @@
-NO North
-SA SAUTH
-WE west
-EA east
+NO ../North.xpm
+SA ../South.xpm
+WE ../West.xpm
+EA ../East.xpm
 
 F 200,100,0
 C 225,30,0
