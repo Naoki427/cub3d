@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 17:10:02 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/22 19:22:22 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,10 @@ void	analysis_file(int fd)
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
-	check_struct(info);
+	info.north = "images/anker.xpm";
+	info.south = "images/anker.xpm";
+	info.east = "images/anker.xpm";
+	info.west = "images/anker.xpm";
+	// check_struct(info);
+	initializaion(&info);
 }

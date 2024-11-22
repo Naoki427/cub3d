@@ -1,10 +1,11 @@
 NAME = cub3d
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-# CFLAGS += -g -fsanitize=address
+# CFLAGS += -g
+CFLAGS += -g -fsanitize=address
 SRC_DIR = ./srcs
 INCLUDE_DIR = ./include
-SRC = 	$(SRC_DIR)/*.c \
+SRC = 	$(wildcard srcs/*.c)
 
 MLXDIR = ./minilibx-linux
 MLX = $(MLXDIR)/libmlx_Linux.a
@@ -17,7 +18,7 @@ RM = rm -rf
 	$(CC) $(CFLAGS) -I$(MLXDIR) -I$(INCLUDE_DIR) -c $< -o $@ 
 
 $(NAME): $(MLX) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(MLX) -lXext -lX11 -o cub3d
+	$(CC) $(CFLAGS) $(OBJ) $(MLX) -lXext -lX11 -lm -o cub3d
 $(MLX):
 	$(MAKE) -C $(MLXDIR)
 
