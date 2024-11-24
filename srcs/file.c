@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/20 15:51:42 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/20 17:33:27 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,6 @@ void	analysis_file(int fd)
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
-	check_struct(info);
+	// check_struct(info);
+	check_map(info);
 }
