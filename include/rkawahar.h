@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:43:14 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/24 21:19:15 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/24 23:05:27 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	**insert_map(char *str, int fd);
 void	ft_insertion(char *str, int *nums);
 void	ft_free(char **str);
 void	check_map(t_info info);
+char	*set_space(int x);
+char	*copy_map_str(int x, char *str);
 
 void	check_struct(t_info info);
 
