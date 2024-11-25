@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:43:14 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 17:06:25 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/25 10:37:59 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ void	printf_exit(char *str);
 char	**insert_map(char *str, int fd);
 void	ft_insertion(char *str, int *nums);
 void	ft_free(char **str);
+char	**check_map(t_info info);
+char	*set_space(int x);
+char	*copy_map_str(int x, char *str);
+void	back_track(char **map);
 
 void	check_struct(t_info info);
 

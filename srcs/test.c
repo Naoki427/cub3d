@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:32:25 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 17:06:13 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/25 09:03:25 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,6 @@ void	check_struct(t_info info)
 	i = 0;
 	while (info.map[i])
 	{
-		printf("%s", info.map[i++]);
+		printf("[%s]\n", info.map[i++]);
 	}
 }

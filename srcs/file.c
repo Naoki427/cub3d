@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/23 19:05:00 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:38:35 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,7 @@ void	analysis_file(int fd)
 	info.west = "images/West.xpm";
 	info.south = "images/South.xpm";
 	info.east = "images/East.xpm";
-	// check_struct(info);
-	initializaion(&info);
+	info.map = check_map(info);
+	check_struct(info);
+	// initializaion(&info);
 }
