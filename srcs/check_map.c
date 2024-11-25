@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:32:35 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 09:16:16 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/25 11:25:18 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,31 @@ char	**re_map(char **map)
 		max_y++;
 	}
 	ans = map_copy(max_x, max_y, map);
+	back_track(ans);
 	return (ans);
 }
 
 char	**check_map(t_info info)
 {
+	char	**ans;
+	int		i;
+	int		y;
+
 	check_char(info.map);
-	return (re_map(info.map));
+	ans = re_map(info.map);
+	i = 0;
+	y = 0;
+	while (ans[y])
+	{
+		i = 0;
+		while (ans[y][i])
+		{
+			if (ans[y][i] == '2')
+				ans[y][i] = ' ';
+			i++;
+		}
+		y++;
+	}
+	ft_free(info.map);
+	return (ans);
 }

@@ -6,7 +6,7 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 09:17:59 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/25 10:38:35 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,5 +146,5 @@ void	analysis_file(int fd)
 	info.east = "images/East.xpm";
 	info.map = check_map(info);
 	check_struct(info);
-	initializaion(&info);
+	// initializaion(&info);
 }

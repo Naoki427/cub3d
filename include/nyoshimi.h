@@ -6,13 +6,13 @@
 /*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/25 09:18:14 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/25 10:37:09 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NYOSHIMI_H
 #define NYOSHIMI_H
-#include "mlx.h"
+// #include "mlx.h"
 #include "math.h"
 
 #define W_WIDTH 1440
