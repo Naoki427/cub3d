@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:05:10 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/24 00:00:33 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/24 01:58:35 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void initializaion(t_info *info)
 	
 	init_window(&vars);
 	init_image(&vars,info,&map);
-	// init_plane(info,&map);
 	init_player(&player,info,&map);
-	// process_ray_casting(&player,&map,&vars);
-	init_tool(&tool,&player);
-	do_ray_cast(&player,&map,&tool,&vars);
-	mlx_key_hook(vars.win,key_press,&player);
-	mlx_hook(vars.win,KEY_RELEASE,0,key_release,&player);
+	init_tool(&tool,&player,&vars,&map);
+	do_ray_cast(&tool);
+	mlx_loop_hook(vars.mlx,loop_hook,&tool);
+	// mlx_hook(vars.win,KEY_PRESS,0,&key_press,&player);
+	mlx_key_hook(vars.win,&key_press,&player);
+	// mlx_hook(vars.win,KEY_RELEASE,0,&key_release,&player);
 	mlx_loop(vars.mlx);
 }
 
@@ -70,7 +70,7 @@ void init_image(t_vars *vars,t_info *info,t_map *map)
 		put_error_message("mlx_get_data_addr");
 }
 
-void init_tool(t_tool *tool,t_player *player)
+void init_tool(t_tool *tool,t_player *player,t_vars *vars,t_map *map)
 {
 	tool->fovX = 0;
 	tool->fovY = 0;
@@ -80,4 +80,7 @@ void init_tool(t_tool *tool,t_player *player)
 		tool->fovY = 0.66;
 	tool->time = 0;
   	tool->oldTime = 0;
+	tool->player = player;
+	tool->map = map;
+	tool->vars = vars;
 }

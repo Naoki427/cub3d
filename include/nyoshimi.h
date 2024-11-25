@@ -6,13 +6,14 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/24 00:00:52 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/24 02:20:05 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NYOSHIMI_H
 #define NYOSHIMI_H
 #include "mlx.h"
+#include "mlx_int.h"
 #include "math.h"
 
 #define W_WIDTH 1440
@@ -69,6 +70,31 @@ typedef struct s_color
 	unsigned int a;
 } t_color;
 
+
+
+typedef struct s_map
+{
+	char 	**map;
+	// t_plane	*plane;
+	t_color		floor;
+	t_color		ceiling;
+	// int		*searched_flg;
+	t_data	image[4];
+	// int		box_num;
+}t_map;
+
+typedef struct s_player
+{
+	t_vector	pos;
+	t_vector	front;
+	t_vector	up;
+	t_vector	right;
+	int			move_flg;
+	int			turn_flg;
+	t_map		*map;
+	// t_vector	ray_screen[W_HEIGHT][W_WIDTH];
+} t_player;
+
 typedef struct s_tool
 {
 	double fovX;
@@ -96,32 +122,10 @@ typedef struct s_tool
 	int imgX;
 	int imgY;
 	t_color color;
+	t_player *player;
+	t_map *map;
+	t_vars *vars;
 } t_tool;
-
-
-typedef struct s_map
-{
-	char 	**map;
-	// t_plane	*plane;
-	t_color		floor;
-	t_color		ceiling;
-	// int		*searched_flg;
-	t_data	image[4];
-	// int		box_num;
-}t_map;
-
-typedef struct s_player
-{
-	t_vector	pos;
-	t_vector	front;
-	t_vector	up;
-	t_vector	right;
-	int			move_flg;
-	int			turn_flg;
-	t_map		*map;
-	// t_vector	ray_screen[W_HEIGHT][W_WIDTH];
-} t_player;
-
 
 // typedef struct s_plane
 // {
@@ -139,7 +143,7 @@ typedef struct s_player
 void initializaion(t_info *info);
 void init_window(t_vars *vars);
 void init_image(t_vars *vars,t_info *info,t_map *map);
-void init_tool(t_tool *tool,t_player *player);
+void init_tool(t_tool *tool,t_player *player,t_vars *vars,t_map *map);
 
 //player.c
 void init_player(t_player *player, t_info *init_info,t_map *map);
@@ -178,9 +182,10 @@ void put_error_message(char *message);
 // int check_all_searched(t_plane *first);
 
 //raycast.c
-void do_ray_cast(t_player *player,t_map *map,t_tool *tool,t_vars *vars);
+void do_ray_cast(t_tool *tool);
 
 int key_press(int keycode, t_player *player);
 int key_release(int keycode, t_player *player);
+int loop_hook(t_tool *tool);
 
 #endif
