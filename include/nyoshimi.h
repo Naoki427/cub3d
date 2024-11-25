@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nyoshimi.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/24 00:00:52 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/25 09:18:14 by kawaharadar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
