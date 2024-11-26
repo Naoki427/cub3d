@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:15:30 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/26 13:13:02 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 01:34:45 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ char	*gnl_cub3d_2(int fd)
 			break ;
 	}
 	if (ft_strlen(ans) == 0)
+	{
+		free(ans);
 		return (NULL);
+	}
 	return (ans);
 }
 

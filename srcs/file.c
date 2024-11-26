@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/27 00:59:02 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 01:50:50 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,12 +135,13 @@ void	analysis_file(int fd)
 	if (ft_strlen(str))
 		info.map = insert_map(str, fd);
 	free(str);
+	close(fd);
 	if (check_info(info))
 	{
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
 	info.map = check_map(info);
-	check_struct(info);
-	// initializaion(&info);
+	initializaion(&info);
+	free_info(info);
 }
