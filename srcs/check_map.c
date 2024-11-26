@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:32:35 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/27 00:51:18 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 02:00:26 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**re_map(char **map)
 			max_x = ft_strlen(map[max_y]);
 		max_y++;
 	}
+	if (max_x > 1000 || max_y > 1000)
+		printf_exit("Map error: Max map size is 1000x1000");
 	ans = map_copy(max_x, max_y, map);
 	back_track(ans);
 	return (ans);
