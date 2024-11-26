@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 10:38:35 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 18:08:56 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	insert_info(t_info *info, char *str)
 	return (0);
 }
 
-void	analysis_file(int fd)
+t_info	analysis_file(int fd)
 {
 	char	*str;
 	t_info	info;
@@ -140,11 +140,6 @@ void	analysis_file(int fd)
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
-	info.north = "images/North.xpm";
-	info.west = "images/West.xpm";
-	info.south = "images/South.xpm";
-	info.east = "images/East.xpm";
 	info.map = check_map(info);
-	check_struct(info);
-	// initializaion(&info);
+	return(info);
 }

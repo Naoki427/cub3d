@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rkawahar.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:43:14 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 10:37:59 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 18:07:59 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_info
 }			t_info;
 
 size_t	ft_strlen(char *str);
-void	analysis_file(int fd);
+t_info	analysis_file(int fd);
 t_info	init_info(void);
 int		check_info(t_info info);
 int		ft_isspace(char c);

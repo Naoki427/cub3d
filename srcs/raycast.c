@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:53:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/24 02:16:32 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:07:40 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,10 @@ void do_ray_cast(t_tool *tool)
 		//ここあんまいみわからん
 		tool->lineHeight = (int)(W_HEIGHT / tool->verDistance);
 		tool->pixStart = -tool->lineHeight / 2 + W_HEIGHT / 2;
+		tool->pixEnd = tool-> lineHeight / 2 + W_HEIGHT / 2;
+		tool->pixTop =tool->pixStart;
 		if (tool->pixStart < 0)
 			tool->pixStart = 0;
-		tool->pixEnd = tool-> lineHeight / 2 + W_HEIGHT / 2;
 		if (tool->pixEnd < 0)
 			tool->pixEnd = W_HEIGHT -1;
 		if(tool->side == 1 || tool->side == 3)
@@ -120,8 +121,8 @@ void do_ray_cast(t_tool *tool)
 			tool->wallX = tool->player->pos.x + tool->verDistance*tool->rayX;
 		tool->wallX -= floor((tool->wallX)); //少数部分
 		tool->imgX = (int)(tool->wallX*(double)(tool->map->image[tool->side].width));
-		// if(tool->side == 2 || tool->side == 3)
-		// 	tool->imgX = tool->map->image[tool->side].width - tool->imgX - 1;
+		if(tool->side == 0 || tool->side == 3)
+			tool->imgX = tool->map->image[tool->side].width - tool->imgX - 1;
 		int y = 0;
 		while(y < W_HEIGHT)
 		{
@@ -129,7 +130,7 @@ void do_ray_cast(t_tool *tool)
 				set_color(&tool->vars->img.addr[y*tool->vars->img.line_length + x*tool->vars->img.bits_per_pixel / 8],tool->map->ceiling);
 			else if (y < tool->pixEnd)
 			{
-				tool->imgY = (y - tool->pixStart )/ ((double)(tool->pixEnd-tool->pixStart)/(double)tool->map->image[tool->side].height);
+				tool->imgY = (y - tool->pixTop )/ ((double)(tool->pixEnd-tool->pixTop)/(double)tool->map->image[tool->side].height);
 				tool->color = get_color(&tool->map->image[tool->side].addr[tool->imgY*tool->map->image[tool->side].line_length + tool->imgX*(tool->map->image[tool->side].bits_per_pixel / 8)]);
 				set_color(&tool->vars->img.addr[y*tool->vars->img.line_length + x*tool->vars->img.bits_per_pixel / 8],tool->color);
 			}
@@ -139,7 +140,5 @@ void do_ray_cast(t_tool *tool)
 		}
 		x++;
 	}
-	// if(!mlx_put_image_to_window(tool->vars->mlx,tool->vars->win,tool->vars->img.img,0,0))
-	// 	put_error_message("mlx_put_image_to_window");
 	mlx_put_image_to_window(tool->vars->mlx,tool->vars->win,tool->vars->img.img,0,0);
 }

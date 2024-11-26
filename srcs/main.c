@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:42:14 by rkawahar          #+#    #+#             */
-/*   Updated: 2024/11/18 16:28:38 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 18:08:53 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	check_file_extension(char *file, char *ext)
 int	main(int ac, char **av)
 {
 	int	fd;
+	t_info info;
 
 	if (ac != 2)
 	{
@@ -48,5 +49,6 @@ int	main(int ac, char **av)
 		printf("File error: %s: cannot open the file\n", av[1]);
 		exit(1);
 	}
-	analysis_file(fd);
+	info = analysis_file(fd);
+	start_ray_cast(&info);
 }
