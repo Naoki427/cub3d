@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:15:30 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/18 20:28:37 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:13:02 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ char	*gnl_cub3d_2(int fd)
 		if (i < 0)
 			printf_exit("read error");
 		else if (i == 0)
-			break;
+			break ;
 		ans = re_create_2(ans, tmp);
 		if (tmp == '\n')
 			break ;
 	}
 	if (ft_strlen(ans) == 0)
-		return NULL;
+		return (NULL);
 	return (ans);
 }
 

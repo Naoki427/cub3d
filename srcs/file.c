@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 10:38:35 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:11:10 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ char	*cub3d_gnl(int fd)
 	{
 		i = read(fd, &tmp, 1);
 		if (i == 0)
-			break;
+			break ;
 		else if (i < 0)
 			printf_exit("read error");
 		str = re_create(str, tmp);
 		if (tmp == '\n')
-			break;
+			break ;
 	}
 	return (str);
 }
