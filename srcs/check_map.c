@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:32:35 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 11:25:18 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/27 00:51:18 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ char	**check_map(t_info info)
 		i = 0;
 		while (ans[y][i])
 		{
+			if (ans[y][i] == ' ')
+				printf_exit("Map error: No space inside the wall.");
 			if (ans[y][i] == '2')
 				ans[y][i] = ' ';
 			i++;

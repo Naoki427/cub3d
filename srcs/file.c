@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/26 13:11:10 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 00:59:02 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	insert_info(t_info *info, char *str)
 		i++;
 	if (str[i] && str[i] == 'N' && info->north == NULL && str[i + 1] == 'O')
 		info->north = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'A')
+	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'O')
 		info->south = select_path(&str[i + 2]);
 	else if (str[i] && str[i] == 'W' && info->west == NULL && str[i + 1] == 'E')
 		info->west = select_path(&str[i + 2]);
@@ -127,9 +127,9 @@ void	analysis_file(int fd)
 	{
 		str = cub3d_gnl(fd);
 		if (ft_strlen(str) == 0)
-			break;
+			break ;
 		if (insert_info(&info, str))
-			break;
+			break ;
 		free(str);
 	}
 	if (ft_strlen(str))
@@ -140,10 +140,6 @@ void	analysis_file(int fd)
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
-	info.north = "images/North.xpm";
-	info.west = "images/West.xpm";
-	info.south = "images/South.xpm";
-	info.east = "images/East.xpm";
 	info.map = check_map(info);
 	check_struct(info);
 	// initializaion(&info);

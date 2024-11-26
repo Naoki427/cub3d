@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_int.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:50:09 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/20 15:44:32 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/27 00:53:51 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	ft_insertion(char *str, int *nums)
 
 	i = 1;
 	index = 0;
+	if (nums[0] != -1 || nums[1] != -1 || nums[2] != -1)
+		printf_exit("Format error: file format error. Read subjectPDF.");
 	while (ft_isspace(str[i]))
 		i++;
 	nums[index++] = ft_atoi(str, &i, ',');
