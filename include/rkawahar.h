@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:43:14 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/27 01:55:56 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 22:38:36 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**check_map(t_info info);
 char	*set_space(int x);
 char	*copy_map_str(int x, char *str);
 void	back_track(char **map);
-void	free_map(t_info info);
+void	free_info(t_info info);
 
 void	check_struct(t_info info);
 

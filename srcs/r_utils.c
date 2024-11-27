@@ -6,7 +6,7 @@
 /*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:38:26 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/27 01:55:19 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/11/27 22:38:25 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	printf_exit(char *str)
 	exit(1);
 }
 
-void	free_map(t_info info)
+void	free_info(t_info info)
 {
 	int	i;
 
