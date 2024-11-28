@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 18:04:34 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:33:19 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,31 +93,31 @@ typedef struct s_player
 
 typedef struct s_tool
 {
-	double fovX;
-	double fovY;
-	double rayX;
-	double rayY;
-	double cameraX;
-	double toNearX;
-	double toNearY;
-	double toNextX;
-	double toNextY;
-	int focusX;
-	int focusY;
+	double fov_x;
+	double fov_y;
+	double ray_x;
+	double ray_y;
+	double camera_x;
+	double to_near_x;
+	double to_near_y;
+	double to_next_x;
+	double to_next_y;
+	int focus_x;
+	int focus_y;
 	double time;
-	double oldTime;
+	double old_time;
 	int is_hit;
 	int side;
-	double stepX;
-	double stepY;
-	double verDistance;
-	int lineHeight;
-	int pixStart;
-	int pixEnd;
-	int pixTop;
-	double wallX;
-	int imgX;
-	int imgY;
+	double step_x;
+	double step_y;
+	double ver_distance;
+	int line_height;
+	int pix_start;
+	int pix_end;
+	int pix_top;
+	double wall_x;
+	int img_x;
+	int img_y;
 	t_color color;
 	t_player *player;
 	t_map *map;
@@ -146,7 +146,12 @@ void put_error_message(char *message);
 //raycast.c
 void do_ray_cast(t_tool *tool);
 
+//hook.c
 int key_press(int keycode, t_tool *tool);
 int loop_hook(t_tool *tool);
+
+//color.c
+t_color get_color(char *addr);
+void set_color(char *addr,t_color color);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 00:14:12 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 18:07:08 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:20:22 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ static void	set_fov(t_tool *tool, double rad)
 {
 	double	old_fov_x;
 
-	old_fov_x = tool->fovX;
-	tool->fovX = tool->fovX * cos(rad) - tool->fovY * sin(rad);
-	tool->fovY = old_fov_x * sin(rad) + tool->fovY * cos(rad);
+	old_fov_x = tool->fov_x;
+	tool->fov_x = tool->fov_x * cos(rad) - tool->fov_y * sin(rad);
+	tool->fov_y = old_fov_x * sin(rad) + tool->fov_y * cos(rad);
 }
 
 static void	handle_move_flg(t_tool *tool)

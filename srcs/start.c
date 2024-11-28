@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialization.c                                   :+:      :+:    :+:   */
+/*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:05:10 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 17:51:32 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:20:51 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,18 +88,18 @@ void	init_image(t_vars *vars, t_info *info, t_map *map)
 
 void	init_tool(t_tool *tool, t_player *player, t_vars *vars, t_map *map)
 {
-	tool->fovX = 0;
-	tool->fovY = 0;
+	tool->fov_x = 0;
+	tool->fov_y = 0;
 	if (player->front.y == 1)
-		tool->fovX = -0.66;
+		tool->fov_x = -0.66;
 	else if (player->front.y == -1)
-		tool->fovX = 0.66;
+		tool->fov_x = 0.66;
 	else if (player->front.x == 1)
-		tool->fovY = 0.66;
+		tool->fov_y = 0.66;
 	else if (player->front.x == -1)
-		tool->fovY = -0.66;
+		tool->fov_y = -0.66;
 	tool->time = 0;
-	tool->oldTime = 0;
+	tool->old_time = 0;
 	tool->player = player;
 	tool->map = map;
 	tool->vars = vars;
