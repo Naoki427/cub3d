@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:32:35 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 11:25:18 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/27 02:00:26 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**re_map(char **map)
 			max_x = ft_strlen(map[max_y]);
 		max_y++;
 	}
+	if (max_x > 1000 || max_y > 1000)
+		printf_exit("Map error: Max map size is 1000x1000");
 	ans = map_copy(max_x, max_y, map);
 	back_track(ans);
 	return (ans);
@@ -103,6 +105,8 @@ char	**check_map(t_info info)
 		i = 0;
 		while (ans[y][i])
 		{
+			if (ans[y][i] == ' ')
+				printf_exit("Map error: No space inside the wall.");
 			if (ans[y][i] == '2')
 				ans[y][i] = ' ';
 			i++;

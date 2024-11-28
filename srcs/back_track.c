@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   back_track.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:23:44 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 11:23:40 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:10:45 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	backtrack_core(char **map, int x, int y)
 	if (map[y][x] && check_0(map, x, y))
 	{
 		map[y][x] = '2';
-		if  (map[y][x + 1] != '\0' && map[y][x + 1] != '2')
+		if (map[y][x + 1] != '\0' && map[y][x + 1] != '2')
 			backtrack_core(map, x + 1, y);
 		if (map[y + 1] && map[y + 1][x] != '2')
 			backtrack_core(map, x, y + 1);

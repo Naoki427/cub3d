@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   r_utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:38:26 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/19 13:32:23 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/27 22:38:25 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,21 @@ void	printf_exit(char *str)
 {
 	printf("%s\n", str);
 	exit(1);
+}
+
+void	free_info(t_info info)
+{
+	int	i;
+
+	i = 0;
+	free(info.west);
+	free(info.south);
+	free(info.north);
+	free(info.east);
+	free(info.ceiling);
+	free(info.flooring);
+	while (info.map[i])
+		free(info.map[i++]);
+	free(info.map[i]);
+	free(info.map);
 }

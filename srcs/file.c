@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/26 18:08:56 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:50:07 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ char	*cub3d_gnl(int fd)
 	{
 		i = read(fd, &tmp, 1);
 		if (i == 0)
-			break;
+			break ;
 		else if (i < 0)
 			printf_exit("read error");
 		str = re_create(str, tmp);
 		if (tmp == '\n')
-			break;
+			break ;
 	}
 	return (str);
 }
@@ -98,7 +98,7 @@ int	insert_info(t_info *info, char *str)
 		i++;
 	if (str[i] && str[i] == 'N' && info->north == NULL && str[i + 1] == 'O')
 		info->north = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'A')
+	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'O')
 		info->south = select_path(&str[i + 2]);
 	else if (str[i] && str[i] == 'W' && info->west == NULL && str[i + 1] == 'E')
 		info->west = select_path(&str[i + 2]);
@@ -127,19 +127,21 @@ t_info	analysis_file(int fd)
 	{
 		str = cub3d_gnl(fd);
 		if (ft_strlen(str) == 0)
-			break;
+			break ;
 		if (insert_info(&info, str))
-			break;
+			break ;
 		free(str);
 	}
 	if (ft_strlen(str))
 		info.map = insert_map(str, fd);
 	free(str);
+	close(fd);
 	if (check_info(info))
 	{
 		printf("Infomation error: Missing infomation in .cub file\n");
 		exit(1);
 	}
 	info.map = check_map(info);
-	return(info);
+	initializaion(&info);
+	free_info(info);
 }

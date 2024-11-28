@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kawaharadaryou <kawaharadaryou@student.    +#+  +:+       +#+        */
+/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:32:25 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/25 09:03:25 by kawaharadar      ###   ########.fr       */
+/*   Updated: 2024/11/27 01:45:26 by rkawahar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
