@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:29:10 by kawaharadar       #+#    #+#             */
-/*   Updated: 2024/11/28 17:50:07 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:20:47 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,8 @@ int	insert_info(t_info *info, char *str)
 		i++;
 	if (str[i] && str[i] == 'N' && info->north == NULL && str[i + 1] == 'O')
 		info->north = select_path(&str[i + 2]);
-	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i + 1] == 'O')
+	else if (str[i] && str[i] == 'S' && info->south == NULL && str[i
+			+ 1] == 'O')
 		info->south = select_path(&str[i + 2]);
 	else if (str[i] && str[i] == 'W' && info->west == NULL && str[i + 1] == 'E')
 		info->west = select_path(&str[i + 2]);
@@ -142,6 +143,5 @@ t_info	analysis_file(int fd)
 		exit(1);
 	}
 	info.map = check_map(info);
-	initializaion(&info);
-	free_info(info);
+	return (info);
 }

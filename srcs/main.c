@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:42:14 by rkawahar          #+#    #+#             */
-/*   Updated: 2024/11/28 17:50:24 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:18:46 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,28 @@ int	check_file_extension(char *file, char *ext)
 	return (file[len] - *ext);
 }
 
+void	do_ray_cast(t_tool *tool)
+{
+	int	x;
+
+	x = 0;
+	while (x < W_WIDTH)
+	{
+		set_ray_var(tool, x);
+		set_step_var(tool);
+		shoot_ray(tool);
+		set_distance(tool);
+		set_pixel(tool, x);
+		x++;
+	}
+	mlx_put_image_to_window(tool->vars->mlx, tool->vars->win,
+		tool->vars->img.img, 0, 0);
+}
+
 int	main(int ac, char **av)
 {
-	int	fd;
-	t_info info;
+	int		fd;
+	t_info	info;
 
 	if (ac != 2)
 	{
@@ -51,4 +69,5 @@ int	main(int ac, char **av)
 	}
 	info = analysis_file(fd);
 	start_ray_cast(&info);
+	free_info(info);
 }

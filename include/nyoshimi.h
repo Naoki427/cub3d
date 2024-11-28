@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 18:33:19 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:18:05 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ typedef struct s_tool
 	t_vars *vars;
 } t_tool;
 
+//main.c
+void do_ray_cast(t_tool *tool);
 
 //start.c
 void	start_ray_cast(t_info *info);
@@ -144,7 +146,11 @@ t_vector rotate(t_vector vec, double rad);
 void put_error_message(char *message);
 
 //raycast.c
-void do_ray_cast(t_tool *tool);
+void	set_ray_var(t_tool *tool, int x);
+void	set_step_var(t_tool *tool);
+void	shoot_ray(t_tool *tool);
+void	set_distance(t_tool *tool);
+void	set_pixel(t_tool *tool, int x);
 
 //hook.c
 int key_press(int keycode, t_tool *tool);

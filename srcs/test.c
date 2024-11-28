@@ -103,8 +103,10 @@ void	check_struct(t_info info)
 	printf("south = %s\n", info.south);
 	printf("east = %s\n", info.east);
 	printf("west = %s\n", info.west);
-	printf("flooring = [%d, %d, %d]\n", info.flooring[0], info.flooring[1], info.flooring[2]);
-	printf("ceiling = [%d, %d, %d]\n", info.ceiling[0], info.ceiling[1], info.ceiling[2]);
+	printf("flooring = [%d, %d, %d]\n", info.flooring[0], info.flooring[1],
+		info.flooring[2]);
+	printf("ceiling = [%d, %d, %d]\n", info.ceiling[0], info.ceiling[1],
+		info.ceiling[2]);
 	i = 0;
 	while (info.map[i])
 	{
