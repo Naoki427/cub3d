@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 00:14:12 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 18:20:22 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:35:12 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,17 +97,17 @@ int	loop_hook(t_tool *tool)
 	handle_move_flg(tool);
 	if (tool->player->turn_flg == ROT_RIGHT)
 	{
-		tool->player->front = rotate(tool->player->front, M_PI / 6);
-		set_fov(tool, M_PI / 6);
-		tool->player->right = rotate(tool->player->front, M_PI / 2);
+		tool->player->front = rotate(tool->player->front, PI / 6);
+		set_fov(tool, PI / 6);
+		tool->player->right = rotate(tool->player->front, PI / 2);
 		tool->player->turn_flg = 0;
 		do_ray_cast(tool);
 	}
 	else if (tool->player->turn_flg == ROT_LEFT)
 	{
-		tool->player->front = rotate(tool->player->front, -M_PI / 6);
-		set_fov(tool, -M_PI / 6);
-		tool->player->right = rotate(tool->player->front, M_PI / 2);
+		tool->player->front = rotate(tool->player->front, -PI / 6);
+		set_fov(tool, -PI / 6);
+		tool->player->right = rotate(tool->player->front, PI / 2);
 		tool->player->turn_flg = 0;
 		do_ray_cast(tool);
 	}

@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:05:10 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 18:20:51 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:29:42 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	start_ray_cast(t_info *info)
 	do_ray_cast(&tool);
 	mlx_loop_hook(vars.mlx, loop_hook, &tool);
 	mlx_key_hook(vars.win, &key_press, &tool);
+	mlx_hook(vars.win, 17, 0, close_window, &tool);
 	mlx_loop(vars.mlx);
 }
 

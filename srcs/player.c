@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:38:01 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/26 17:30:12 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:33:29 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	init_player(t_player *player, t_info *init_info, t_map *map)
 		}
 		i++;
 	}
-	player->right = rotate(player->front, M_PI / 2);
+	player->right = rotate(player->front, PI / 2);
 }
 
 void	init_posision(t_player *player, t_info *init_info, int i, int j)

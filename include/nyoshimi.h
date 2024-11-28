@@ -6,7 +6,7 @@
 /*   By: nyoshimi <nyoshimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/11/28 20:18:05 by nyoshimi         ###   ########.fr       */
+/*   Updated: 2024/11/28 20:34:14 by nyoshimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 #define ROT_SPEED 1
 # define KEY_PRESS 2
 # define KEY_RELEASE 3
+#define PI 3.14159265358979323846 
 
 typedef struct s_data
 {
@@ -142,8 +143,9 @@ void init_posision(t_player *player, t_info *init_info,int i,int j);
 t_vector reverse(t_vector vec);
 t_vector rotate(t_vector vec, double rad);
 
-//error.c
+//n_utils.c
 void put_error_message(char *message);
+int close_window(t_tool *tool);
 
 //raycast.c
 void	set_ray_var(t_tool *tool, int x);
