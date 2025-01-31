@@ -10,29 +10,24 @@ SRC = 	$(SRC_DIR)/back_track.c $(SRC_DIR)/check_map.c $(SRC_DIR)/color.c $(SRC_D
 		$(SRC_DIR)/player.c $(SRC_DIR)/r_utils.c $(SRC_DIR)/raycast.c $(SRC_DIR)/start.c $(SRC_DIR)/test.c $(SRC_DIR)/vector.c \
 		$(SRC_DIR)/struct.c
 
-MLXDIR = ./minilibx-linux
-MLX = $(MLXDIR)/libmlx_Linux.a
 
 OBJ = $(SRC:.c=.o)
 
 RM = rm -rf
 
 %.o:%.c
-	$(CC) $(CFLAGS) -I$(MLXDIR) -I$(INCLUDE_DIR) -c $< -o $@ 
+	$(CC) $(CFLAGS)  -I$(INCLUDE_DIR) -I./minilibx_opengl_20191021 -c $< -o $@ 
 
-$(NAME): $(MLX) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(MLX) -lXext -lX11 -lm -o cub3d
-$(MLX):
-	$(MAKE) -C $(MLXDIR)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -L./minilibx_opengl_20191021 -lmlx -framework OpenGL -framework AppKit -o cub3d
 
 all: $(NAME)
 
 clean:
 	$(RM) $(OBJ)
-	$(MAKE) clean -C $(MLXDIR)
 
 fclean: clean
-	$(RM) $(NAME) $(MLX)
+	$(RM) $(NAME) 
 
 bonus: all
 

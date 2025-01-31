@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   nyoshimi.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkawahar <rkawahar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshiminaoki <yoshiminaoki@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:48:52 by nyoshimi          #+#    #+#             */
-/*   Updated: 2024/12/02 11:14:39 by rkawahar         ###   ########.fr       */
+/*   Updated: 2024/12/16 04:26:31 by yoshiminaok      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NYOSHIMI_H
 # define NYOSHIMI_H
-# include "mlx.h"
-# include "mlx_int.h"
+# include <mlx.h>
+// # include "mlx_int.h"
 # include "math.h"
 
-# define W_WIDTH 1440
-# define W_HEIGHT 1080
+# define W_WIDTH 800
+# define W_HEIGHT 600
 
 # define UP 1
 # define DOWN  2
@@ -25,13 +25,13 @@
 # define RIGHT 4
 # define ROT_LEFT 5
 # define ROT_RIGHT 6
-# define KEY_W 119
-# define KEY_A 97
-# define KEY_S 115
-# define KEY_D 100
-# define KEY_LEFT 65361
-# define KEY_RIGHT 65363
-# define ON_DESTROY 65307
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+# define ON_DESTROY 53
 # define MOV_SPEED 0.2
 # define ROT_SPEED 1
 # define KEY_PRESS 2
